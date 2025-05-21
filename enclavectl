@@ -144,7 +144,7 @@ try_create_setup_uuid() {
     CONFIG_SETUP_UUID=$(uuidgen)
   }
 
-  CONFIG_SETUP_UUID = $(echo "$CONFIG_SETUP_UUID" | tr '[:upper:]' '[:lower:]')
+  local CONFIG_SETUP_UUID=$(echo "$CONFIG_SETUP_UUID" | tr '[:upper:]' '[:lower:]')
 
   # Check if the UUID is valid.
   [[ $CONFIG_SETUP_UUID =~ $uuid_pattern ]] || {
